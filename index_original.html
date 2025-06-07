@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KYTC Highway Project Viewer</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Esri Leaflet JS -->
+    //<script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Map Display -->
+        <div id="map" style="height: 500px;"></div>
+
+        <!-- Sidebar Panel -->
+        <div class="sidebar">
+            <label for="projectType"><strong>Project Type:</strong></label>
+            <select id="projectType">
+                <option value="All">All</option>
+                <option value="Resurfacing">Resurfacing</option>
+                <option value="Bridge Replacement">Bridge Replacement</option>
+                <option value="Safety">Safety</option>
+                <!-- Add more project types if needed -->
+            </select>
+
+            <label for="district"><strong>District:</strong></label>
+            <select id="district">
+                <option value="All">All</option>
+                <!-- Populated via JS -->
+            </select>
+
+            <label for="countyInput"><strong>County:</strong></label>
+            <input list="countyList" id="countyInput" placeholder="Type to search counties" />
+            <datalist id="countyList"></datalist>
+
+            <button id="clearFiltersBtn" class="filter-button">Clear Filters</button>
+
+            <button id="downloadBtn">Download Filtered Data as CSV</button>
+
+            <!-- Data Visuals -->
+            <div class="summary-box" id="summaryBox">
+                <!-- Project totals will appear here -->
+            </div>
+
+            <div class="chart-box" id="chartBox1">
+                <!-- Chart 1 -->
+            </div>
+
+            <div class="chart-box" id="chartBox2">
+                <!-- Chart 2 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS + Esri Plugin -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@3/dist/esri-leaflet.js"></script>
+
+    <!-- Your Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

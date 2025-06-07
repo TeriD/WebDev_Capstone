@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KYTC Highway Project Viewer</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-title">Active Highway Projects Viewer</div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Find address or place" />
+            <span class="search-icon">🔍</span>
+        </div>
+        </header>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="collapsible-section">
+                <button class="collapsible">Project Filters ▾</button>
+                <div class="content show">
+                    <label for="projectType">Project Type:</label>
+                    <select id="projectType">
+                        <option value="All">All</option>
+                        <option value="Resurfacing">Resurfacing</option>
+                        <option value="Bridge Replacement">Bridge Replacement</option>
+                        <option value="Safety">Safety</option>
+                    </select>
+
+                    <label for="district">District:</label>
+                    <select id="district">
+                        <option value="All">All</option>
+                    </select>
+
+                    <label for="countyInput">County:</label>
+                    <input list="countyList" id="countyInput" placeholder="Type to search counties" />
+                    <datalist id="countyList"></datalist>
+
+                    <div class="icon-button-group">
+                        <button id="clearFiltersBtn" title="Clear Filters">🧹</button>
+                        <button id="downloadBtn" class="primary" title="Download CSV">💾</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section">
+                <button class="collapsible">Map Layers ▾</button>
+                <div class="content show" id="layerControls">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div id="map"></div>
+
+            <div class="bottom-panel">
+                <div class="summary-container">
+                    <div class="summary-box">
+                        <h3>Active Projects</h3>
+                        <p class="card-text display-6 fw-bold mb-0">147</p>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Current Projects</h3>
+                        <p><strong>1643</strong></p>
+                    </div>
+                    <div class="summary-box">
+                        <h3>Total Completed Projects</h3>
+                        <p><strong>14,709</strong></p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-box" id="chartBar">
+                        <h4>Bar Chart Placeholder</h4>
+                    </div>
+                    <div class="chart-box" id="chartOther">
+                        <h4>Chart Placeholder</h4>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@3/dist/esri-leaflet.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

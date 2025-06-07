@@ -1,0 +1,105 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout Grid */
+body,
+html {
+    height: 100%;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100%;
+    height: 100vh;
+}
+
+/* Map */
+#map {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Sidebar Panel */
+.sidebar {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    border-left: 1px solid #ccc;
+}
+
+.sidebar label {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.sidebar select,
+.sidebar input[type="text"],
+.sidebar button {
+    width: 100%;
+    padding: 0.4rem;
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Button */
+#downloadBtn {
+    background-color: #2a6884;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#downloadBtn:hover {
+    background-color: #1e4e68;
+}
+
+/* Chart Boxes */
+.summary-box,
+.chart-box {
+    background: #efefef;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    min-height: 100px;
+}
+
+.filter-button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    margin-top: 4px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter-button:hover {
+    background-color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #ccc;
+    }
+}

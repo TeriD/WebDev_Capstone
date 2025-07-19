@@ -17,7 +17,7 @@ An interactive web dashboard for visualizing Kentucky highway project data with 
 
 ## Live Demo
 
-Visit the dashboard at: `https://[your-username].github.io/[repository-name]/`
+Visit the dashboard at: `https://terid.github.io/KY_Highway_Plan_Projects/)/`
 
 ## Technologies Used
 
@@ -100,7 +100,7 @@ The dashboard provides three levels of filtering that can be used independently 
 This project is for educational/demonstration purposes.
 
 
-git clone https://github.com/you/my-project.git
-cd my-project
+git clone https://github.com/TeriD/WebDev_Capstone.git
+cd WebDev_Capstone repo
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt

@@ -1,0 +1,61 @@
+raw_project_type,dropdown_category,dropdown_display_name,count_current_plans,description
+AM-BRIDGE (P),Bridge Projects,Bridge Maintenance/Replacement,379,Asset management - bridge projects (programmed)
+SAF-GUARDRAIL(P),Safety,Safety Improvements,331,Safety - guardrail projects (programmed)
+SAFETY(P),Safety,Safety Improvements,98,General safety projects (programmed)
+AM-PAVEMENT (INT)(P),Pavement,Pavement Maintenance,76,Asset management - interstate pavement (programmed)
+RECONSTRUCTION(O),Major Construction,Reconstruction,65,Road reconstruction (other funded)
+RECONSTRUCTION,Major Construction,Reconstruction,65,Road reconstruction
+NEW ROUTE(O),Major Construction,New Construction,52,New route construction (other funded)
+AM-PAVEMENT (PRI)(P),Pavement,Pavement Maintenance,51,Asset management - primary pavement (programmed)
+AIR QUALITY(P),Environmental,Environmental/Air Quality,39,Air quality improvement projects (programmed)
+CONGESTION MITIGTN(O),Capacity,Congestion Relief,37,Congestion mitigation (other funded)
+AM-PAVEMENT (PKY)(P),Pavement,Pavement Maintenance,35,Asset management - parkway pavement (programmed)
+PAVEMENT REHAB-INT(P),Pavement,Pavement Rehabilitation,33,Pavement rehabilitation - interstate (programmed)
+MAJOR WIDENING,Capacity,Road Widening,32,Major road widening projects
+MAJOR WIDENING(O),Capacity,Road Widening,28,Major road widening (other funded)
+MINOR WIDENING(O),Capacity,Road Widening,24,Minor road widening (other funded)
+SPOT IMPROVEMENTS(O),Maintenance,Spot Improvements,23,Localized spot improvements (other funded)
+SAFETY,Safety,Safety Improvements,18,General safety projects
+RELOCATION(O),Major Construction,Road Relocation,18,Road relocation projects (other funded)
+MINOR WIDENING,Capacity,Road Widening,14,Minor road widening projects
+CONGESTION MITIGATION,Capacity,Congestion Relief,14,Congestion mitigation projects
+PAVEMENT REHAB-PRK(P),Pavement,Pavement Rehabilitation,12,Pavement rehabilitation - parkway (programmed)
+BRIDGE REPLACEMENT(P),Bridge Projects,Bridge Maintenance/Replacement,12,Bridge replacement projects (programmed)
+REALIGNMENT,Major Construction,Road Realignment,11,Road realignment projects
+NEW ROUTE,Major Construction,New Construction,9,New route construction
+FERRY OPERATION(P),Transportation Services,Ferry/Transit Operations,9,Ferry operation projects (programmed)
+NEW INTERCHANGE(O),Major Construction,Interchange Projects,5,New interchange construction (other funded)
+GUARDRAIL REPLCMNT(P),Safety,Safety Improvements,5,Guardrail replacement (programmed)
+TRANSP ENHANCEMENT(P),Enhancement,Transportation Enhancement,4,Transportation enhancement projects (programmed)
+SPOT IMPROVEMENTS,Maintenance,Spot Improvements,4,Localized spot improvements
+REST AREA REHAB(P),Facilities,Rest Area/Facilities,4,Rest area rehabilitation (programmed)
+LANDSLIDE REPAIR(P),Maintenance,Emergency/Disaster Repair,3,Landslide repair projects (programmed)
+BRIDGE REHAB(P),Bridge Projects,Bridge Maintenance/Replacement,3,Bridge rehabilitation (programmed)
+AM-BRG PAINTING(P),Bridge Projects,Bridge Maintenance/Replacement,3,Asset management - bridge painting (programmed)
+WEIGH STA REHAB(P),Facilities,Weigh Station/Facilities,2,Weigh station rehabilitation (programmed)
+SAFETY-RR SEPARATN(P),Safety,Railroad Safety,2,Safety - railroad separation (programmed)
+PLANNING-OKI(O),Planning,Planning/Studies,2,Planning projects - OKI (other funded)
+PAVEMENT REHAB-PRI(P),Pavement,Pavement Rehabilitation,2,Pavement rehabilitation - primary (programmed)
+ECONOMIC DEVEL(O),Enhancement,Economic Development,2,Economic development projects (other funded)
+DRAINAGE IMPROVE(P),Maintenance,Drainage/Utilities,2,Drainage improvement projects (programmed)
+Bridge (P),Bridge Projects,Bridge Maintenance/Replacement,2,Bridge projects (programmed)
+SURFACE(O),Pavement,Pavement Maintenance,1,Surface treatment (other funded)
+SIGNING,Maintenance,Signs/Signals,1,Signing projects
+RIDESHARE(P),Transportation Services,Transit/Rideshare,1,Rideshare projects (programmed)
+RESURFACING(P),Pavement,Pavement Maintenance,1,Resurfacing projects (programmed)
+RELOCATION,Major Construction,Road Relocation,1,Road relocation projects
+PLANNING,Planning,Planning/Studies,1,Planning projects
+PHASE I DESIGN(O),Planning,Planning/Studies,1,Phase I design (other funded)
+PE & ENVIRONMENTAL(O),Planning,Planning/Studies,1,Preliminary engineering & environmental (other funded)
+NEW INTERCHANGE,Major Construction,Interchange Projects,1,New interchange construction
+MINR WIDENING,Capacity,Road Widening,1,Minor widening projects
+LIGHTING(P),Maintenance,Lighting/Electrical,1,Lighting projects (programmed)
+INDUSTRIAL ACCESS,Enhancement,Economic Development,1,Industrial access projects
+I-CHANGE RECONST(O),Major Construction,Interchange Projects,1,Interchange reconstruction (other funded)
+GRADE & DRAIN,Maintenance,Drainage/Utilities,1,Grade and drainage projects
+DESIGN ENGINEERING(O),Planning,Planning/Studies,1,Design engineering (other funded)
+BIKE/PED FACIL(O),Enhancement,Bike/Pedestrian Facilities,1,Bike and pedestrian facilities (other funded)
+SAFTEY,Safety,Safety Improvements,4,Safety projects (misspelled)
+ACCESS MANAGEMENT,Enhancement,Access Management,1,Access management projects
+GEOMETRICS,Major Construction,Geometric Improvements,1,Geometric improvement projects
+SLOPE STABILITY,Maintenance,Emergency/Disaster Repair,1,Slope stability projects

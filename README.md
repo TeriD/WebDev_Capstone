@@ -17,7 +17,7 @@ An interactive web dashboard for visualizing Kentucky highway project data with 
 
 ## Live Demo
 
-Visit the dashboard at: `https://terid.github.io/KY_Highway_Plan_Projects/)/`
+Visit the dashboard at: https://terid.github.io/KY_Highway_Plan_Projects/
 
 ## Technologies Used
 

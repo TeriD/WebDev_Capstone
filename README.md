@@ -98,3 +98,9 @@ The dashboard provides three levels of filtering that can be used independently 
 ## License
 
 This project is for educational/demonstration purposes.
+
+
+git clone https://github.com/you/my-project.git
+cd my-project
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt

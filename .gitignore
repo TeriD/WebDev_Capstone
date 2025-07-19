@@ -1,0 +1,5 @@
+# Python virtual-env
+.venv/
+# macOS / VS Code / etc.
+.DS_Store
+.vscode/

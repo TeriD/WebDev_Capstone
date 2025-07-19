@@ -1,3 +1,24 @@
+/* Help button styling */
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+.help-btn span {
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  font-size: 1.1rem !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  border-width: 1.5px !important;
+}
+.help-btn:hover span {
+  background: #fff;
+  color: var(--primary);
+  border-color: var(--primary);
+  text-decoration: none;
+}
 /* =====================================================
    KY Highway Projects Dashboard Styles
    =====================================================

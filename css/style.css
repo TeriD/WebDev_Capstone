@@ -1,24 +1,3 @@
-/* Help button styling */
-.help-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: box-shadow 0.2s, background 0.2s;
-}
-.help-btn span {
-  font-weight: bold;
-  transition: background 0.2s, color 0.2s;
-  font-size: 1.1rem !important;
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-  border-width: 1.5px !important;
-}
-.help-btn:hover span {
-  background: #fff;
-  color: var(--primary);
-  border-color: var(--primary);
-  text-decoration: none;
-}
 /* =====================================================
    KY Highway Projects Dashboard Styles
    =====================================================
@@ -53,9 +32,7 @@
 }
 
 /* Global body styling */
-body {
-  background-color: var(--bg);  /* Apply main background color */
-  color: var(--text);           /* Apply primary text color */
+/* ...existing code... */
 }
 
 /* =====================================================
@@ -76,6 +53,29 @@ header.bg-primary {
 .header-content {
   max-width: none;  /* Remove max-width constraint */
   padding: 0;       /* Remove default padding */
+}
+
+/* Header Help Button Styles */
+.help-btn {
+  text-decoration: none;
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.help-btn .help-icon {
+  font-size: 1.1rem;
+  color: white;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(60, 94, 73, 0.7);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* =====================================================
@@ -1908,12 +1908,6 @@ input[list]::-webkit-calendar-picker-indicator {
         opacity: 0;
         transform: translateY(-5px);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .basemap-menu.show {
     display: block;
 }

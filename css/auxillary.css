@@ -1,0 +1,88 @@
+/* Auxiliary styles for help.html and about.html */
+body {
+  background: #e6ebe6;
+  margin: 0;
+  min-height: 100vh;
+  color: #3c5e49;
+  font-family: system-ui, sans-serif;
+  padding: 2rem;
+}
+
+/* Container styles for auxiliary pages */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 60vh;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(60, 94, 73, 0.08);
+  padding: 2rem 5vw;
+  box-sizing: border-box;
+}
+
+/* Custom horizontal rule for auxiliary pages */
+.container hr {
+  border: none;
+  border-top: 2px solid #709072;
+  margin: 2.5rem 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.container-double-line {
+  border: none;
+  border-top: 3px double #000;
+  /* Adjust color and thickness */
+  height: 0;
+  margin: 1em 0;
+}
+
+
+@media (max-width: 800px) {
+  .container {
+    padding: 1rem 2vw;
+    border-radius: 0.5rem;
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .help-container {
+    padding: 1rem 2vw;
+    border-radius: 0.5rem;
+    min-height: 40vh;
+  }
+}
+
+/* Download button styling for download.html page*/
+button {
+  background: #3c5e49;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #709072;
+}
+
+#status {
+  margin-top: 1.5rem;
+  color: #58745c;
+  font-size: 1rem;
+}
+
+.file-list {
+  margin-left: 120px;
+  text-align: left;
+}
+
+
+

@@ -2605,12 +2605,12 @@ async function loadDatabase() {
         // Create database
         database = new SQL.Database(uint8Array);
 
-        recordCount.textContent = 'Loading project data...';
 
         // Load the Basic_Project_Info table
         loadBasicProjectInfo();
 
         loadBtn.textContent = 'Database Loaded';
+        // The loading message will be replaced by updateTableRecordCount() when data loads
 
     } catch (error) {
         console.error('Error loading database:', error);
@@ -2672,6 +2672,8 @@ function loadBasicProjectInfo() {
             highwayProjectsTable.setData(rows);
 
             console.log('Tabulator table updated successfully');
+            // Ensure record count is updated after table loads
+            updateTableRecordCount(rows.length);
         } else {
             console.error('Tabulator table not initialized');
             // Try to initialize the table if it doesn't exist

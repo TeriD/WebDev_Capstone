@@ -16,8 +16,17 @@ An interactive web dashboard for visualizing Kentucky highway project data with 
 - **Responsive Design**: Works on desktop and mobile devices
 
 ## Live Demo
+Visit the dashboard at: https://terid.github.io/KY_Highway_Plan_Projects/
 
-Visit the dashboard at: `https://[your-username].github.io/[repository-name]/`
+---
+
+## Dashboard Interface
+
+![KY Highway Projects Dashboard Interface](images/thumbnail_600x400.png)
+
+*The interactive dashboard showing Kentucky highway projects with filtering controls, interactive map, charts, and data table.*
+
+---
 
 ## Technologies Used
 

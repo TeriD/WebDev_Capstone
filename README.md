@@ -100,20 +100,11 @@ The dashboard provides three levels of filtering that can be used independently 
 ├── js/
 │   └── download.js
 │   └── script.js             # Main application logic
-│   └── updateProjectsRoute.js # Node.js Express route handler
-├── node_modules/             # Contains all the packages and dependencies installed
- for your Node.js project. These are libraries required by your application, such as Express, sqlite3, csv-parser, and any other modules listed in your package.json. The folder is automatically managed by npm (Node Package Manager) and should not be edited manually. It is essential for running your server-side code.
 ├── References/                # Supporting documentation
-│   └── CapstoneProjectPlan.pdf
-├── download-geojson.js        # Node.js script that downloads GeoJSON files from specified URLs.
 ├── download.html             # Data refresh options page
 ├── help.html                 # User assistance page for details on Web UI & tools
 ├── index.html                # Main dashboard page
-├── package-lock.json         # Records the exact versions of every installed dependency (and their dependencies), ensuring consistent installs across different environments. It helps guarantee that everyone working on the project uses the same package versions, improving reliability and reproducibility.
-├── package.json              # Defines the metadata and dependencies for your Node.js project. It lists the packages your project needs (like express, sqlite3, and csv-parser), along with their version requirements. This file allows npm to install the correct libraries and helps manage, share, and run your project consistently.
 ├── README.md                 # Project Overview and Details regarding the project.
-├── requirements.txt          # Lists Node.js packages (express, sqlite3, csv-parser), which should actually be managed in package.json for Node.js. If your project is Node.js-based, this file is not needed; use package.json instead.
-├── server.js                 # Main entry point for your Node.js web server. It sets up an Express application, configures middleware, serves static files, and defines API endpoints (such as /js/download-geojson and /api/update-projects). It listens for HTTP requests on a specified port (3000), allowing your web application and backend services to run and interact with users and other systems.
 ```
 
 

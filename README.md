@@ -19,6 +19,15 @@ An interactive web dashboard for visualizing Kentucky highway project data with 
 Visit the dashboard at: https://terid.github.io/KY_Highway_Plan_Projects/
 
 ---
+## Use of AI Statement
+As I have been a Python developer for many years, I feel that AI is an excellent tool that should be utilized.  I have employed AI to the benefit of existing ETLs and improve efficiency and performance. I did use AI during the building of this project. But, because of my previous experience, I know that an AI is only as good as the skills of the user.
+
+My approach to AI in this project use was to build out individual components first in separate parts.  I started with my first component during week 2 of Module 1 when we were asked to "Create something of interest".  I began working on a mapping interface
+and a call to the KYTC Spatial API (see https://terid.github.io/WebDev_PotholeReporter/).
+
+Within Visual Studio Code, my preferred IDE, I utilize GitHub Copilot. My preferred AI agent for coding requests is Claude Sonnet 4. I have used it more rigorously in other projects, but limited its use within this project. AI was used in troubleshooting simle problems of missing brackets, but more often helped me find the cause of a particular bug. I also used it to assist with error-handling logic, like try/except blocks.
+
+The use of AI didn't replace my judgement, but definitely made finding errors more efficient. I have found that while Chat GPT can answer questions, it's answers are frequently insufficient to solve issues fully. I did use Chat GPT to assist in creating my initial wireframe diagram. I know that CHAT GPT is frequently used to generate documentation, but I have written professional technical articles and documentation; Chat GPT's grammar is less than adequate.
 
 ## Dashboard Interface
 

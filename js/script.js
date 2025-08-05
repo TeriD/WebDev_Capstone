@@ -364,10 +364,7 @@ function createBasemapControl(map) {
 
         div.innerHTML = `
             <button class="basemap-toggle-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
+                <img src="images/basemap-icon.png" alt="Basemap" width="20" height="20" style="opacity: 0.7;">
             </button>
             <div class="basemap-menu">
                 ${Object.keys(basemaps).map(name =>
@@ -425,7 +422,7 @@ function createDistrictFilterControl(map) {
 
         div.innerHTML = `
             <button class="district-filter-btn">
-                🗺️
+                <img src="images/districts-icon.png" alt="District Filter" width="20" height="20" style="opacity: 0.7;">
             </button>
             <div class="district-filter-menu">
                 <div class="district-filter-header">
@@ -504,6 +501,83 @@ function createClearAllControl(map) {
     return control;
 }
 
+// Legend control function
+function createLegendControl(map) {
+    const control = L.control({ position: 'bottomleft' });
+
+    control.onAdd = function() {
+        const div = L.DomUtil.create('div', 'legend-control');
+
+        div.innerHTML = `
+            <button class="legend-btn" title="Show Map Legend">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="9" y1="9" x2="15" y2="9"/>
+                    <line x1="9" y1="15" x2="15" y2="15"/>
+                </svg>
+                <span style="margin-left: 4px; font-size: 12px; font-weight: bold;">Legend</span>
+            </button>
+            <div class="legend-popup" style="display: none;">
+                <div class="legend-header">
+                    <span>Map Legend</span>
+                    <button class="legend-close-btn" title="Close Legend">×</button>
+                </div>
+                <div class="legend-content">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #006600; border: 1px solid #004400;"></div>
+                        <span>Current Projects</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #0066cc; border: 1px solid #004499;"></div>
+                        <span>Awarded Projects</span>
+                    </div>
+                    <div class="legend-item">
+
+                    <div class="legend-color" style="background-color: transparent; border: 2px solid #808080;"></div>
+                        <span>County Boundaries</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: transparent; border: 2px solid #8b4513;"></div>
+                        <span>District Boundaries</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Prevent map events when clicking on control
+        L.DomEvent.disableClickPropagation(div);
+        L.DomEvent.disableScrollPropagation(div);
+
+        // Toggle legend visibility
+        const toggleBtn = div.querySelector('.legend-btn');
+        const popup = div.querySelector('.legend-popup');
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isVisible = popup.style.display !== 'none';
+            popup.style.display = isVisible ? 'none' : 'block';
+        });
+
+        // Close legend button
+        const closeBtn = div.querySelector('.legend-close-btn');
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            popup.style.display = 'none';
+        });
+
+        // Close legend when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!div.contains(e.target)) {
+                popup.style.display = 'none';
+            }
+        });
+
+        return div;
+    };
+
+    return control;
+}
+
 // Project Type filter control function
 function createProjectTypeFilterControl(map) {
     const control = L.control({ position: 'topright' });
@@ -513,7 +587,7 @@ function createProjectTypeFilterControl(map) {
 
         div.innerHTML = `
             <button class="project-type-filter-btn">
-                <img src="images/road-location-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 0.7;">
+                <img src="images/road-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 0.7;">
             </button>
             <div class="project-type-filter-menu">
                 <div class="project-type-filter-header">
@@ -632,7 +706,7 @@ function loadProjectTypeOptions(controlDiv) {
                 // Update the button to show selected project type with icon
                 const btn = controlDiv.querySelector('.project-type-filter-btn');
                 btn.innerHTML = `
-                    <img src="images/road-location-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 1;">
+                    <img src="images/road-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 1;">
                     <div style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #244332; border-radius: 50%; border: 1px solid white;"></div>
                 `;
                 btn.title = `Filtered by: ${displayName}`;
@@ -803,7 +877,7 @@ function clearProjectTypeFilter(map) {
     const btn = document.querySelector('.project-type-filter-btn');
     if (btn) {
         btn.innerHTML = `
-            <img src="images/road-location-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 0.7;">
+            <img src="images/road-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 0.7;">
         `;
         btn.title = "Project Type Filter";
     }
@@ -821,7 +895,7 @@ function createCountyFilterControl(map) {
 
         div.innerHTML = `
             <button class="county-filter-btn">
-                🏘️
+                <img src="images/county-icon.png" alt="County Filter" width="20" height="20" style="opacity: 0.7;">
             </button>
             <div class="county-filter-menu">
                 <div class="county-filter-header">
@@ -988,7 +1062,7 @@ function loadDistrictOptions(controlDiv) {
     }
 
     try {
-        // First, let's check what columns are in KYTC_Districts table
+        // First, check what columns are in KYTC_Districts table
         const columnsStmt = database.prepare("PRAGMA table_info(KYTC_Districts)");
         const columns = [];
         while (columnsStmt.step()) {
@@ -1102,7 +1176,7 @@ function applyCountyFilter(countyName) {
     const btn = document.querySelector('.county-filter-btn');
     if (btn) {
         btn.innerHTML = `
-            🏘️
+            <img src="images/county-icon.png" alt="County Filter" width="20" height="20" style="opacity: 1;">
             <div style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #244332; border-radius: 50%; border: 1px solid white;"></div>
         `;
         btn.title = `Filtered by: ${countyName} County`;
@@ -1160,7 +1234,7 @@ function clearCountyFilter(map) {
     // Reset the county filter button to its original state
     const btn = document.querySelector('.county-filter-btn');
     if (btn) {
-        btn.innerHTML = '🏘️';
+        btn.innerHTML = '<img src="images/county-icon.png" alt="County Filter" width="20" height="20" style="opacity: 0.7;">';
         btn.title = 'County Filter';
     }
 
@@ -1221,7 +1295,7 @@ function applyDistrictFilter(districtNumber) {
     const btn = document.querySelector('.district-filter-btn');
     if (btn) {
         btn.innerHTML = `
-            🗺️
+            <img src="images/districts-icon.png" alt="District Filter" width="20" height="20" style="opacity: 1;">
             <div style="position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #244332; border-radius: 50%; border: 1px solid white;"></div>
         `;
         btn.title = `Filtered by: District ${districtNumber}`;
@@ -1250,7 +1324,7 @@ function clearDistrictFilter(map) {
     // Reset the district filter button to default state
     const btn = document.querySelector('.district-filter-btn');
     if (btn) {
-        btn.innerHTML = '🗺️';
+        btn.innerHTML = '<img src="images/districts-icon.png" alt="District Filter" width="20" height="20" style="opacity: 0.7;">';
         btn.title = 'District Filter';
     }
 
@@ -1333,7 +1407,7 @@ function clearAllFilters(map) {
     const projectTypeBtn = document.querySelector('.project-type-filter-btn');
     if (projectTypeBtn) {
         projectTypeBtn.innerHTML = `
-            <img src="images/road-location-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 0.7;">
+            <img src="images/road-icon.png" alt="Project Type Filter" width="16" height="16" style="opacity: 0.7;">
         `;
         projectTypeBtn.title = "Project Type Filter";
     }
@@ -1341,14 +1415,14 @@ function clearAllFilters(map) {
     // Reset district filter button to default state
     const districtBtn = document.querySelector('.district-filter-btn');
     if (districtBtn) {
-        districtBtn.innerHTML = '🏛️';
+        districtBtn.innerHTML = '<img src="images/districts-icon.png" alt="District Filter" width="20" height="20" style="opacity: 0.7;">';
         districtBtn.title = 'District Filter';
     }
 
     // Reset county filter button to default state
     const countyBtn = document.querySelector('.county-filter-btn');
     if (countyBtn) {
-        countyBtn.innerHTML = '🏘️';
+        countyBtn.innerHTML = '<img src="images/county-icon.png" alt="County Filter" width="20" height="20" style="opacity: 0.7;">';
         countyBtn.title = 'County Filter';
     }
 
@@ -1423,19 +1497,40 @@ function loadGeoJSONLayer(map, file, style, layerName) {
                     const props = feature.properties || {};
                     let popupContent = '';
 
+                    // Debug: log the properties to see what's available
+                    if (file.includes('Highway_Plans')) {
+                        console.log('Highway project properties:', Object.keys(props));
+                        console.log('Sample properties:', props);
+                    }
+
+                    // Add click debugging
+                    layer.on('click', function(e) {
+                        console.log('Layer clicked!', file, 'Properties:', props);
+                    });
+
                     // Customize popup content based on layer type
                     if (file.includes('Highway_Plans')) {
                         // For highway projects, show project details using actual GeoJSON property names
-                        const projectId = props.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANDIST_ITEM ||
-                                         props.KYTCDynamic_HighwaysDBOProject_Locations_LineIdentifier ||
+                        const projectId = props['KYTCDynamic_Highways.DBO.Project_Locations_Line.OBJECTID'] ||
+                                         props.OBJECTID ||
                                          'Unknown';
-                        const description = props.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANSYP_RPT_DESC ||
-                                          props.DESCRIPTION || 'No description available';
-                        const location = props.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANLOCUNIQUE ||
-                                        props.ROUTE || '';
-                        const county = props.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANCOUNTYNAME ||
-                                      props.COUNTY || '';
-                        const planYear = props.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANPLANYEAR || '';
+
+                        // Use actual property names from console output
+                        const description = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.SYP_RPT_DESC'] ||
+                                          props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.SYP_RPT_TYPENAME'] ||
+                                          'No description available';
+
+                        const location = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.LOCUNIQUE'] ||
+                                        props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.ROUTENO'] ||
+                                        '';
+
+                        const county = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.COUNTYNAME'] ||
+                                      props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.COUNTY'] ||
+                                      '';
+
+                        const planYear = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.PLANYEAR'] ||
+                                        '';
+
                         const status = file.includes('Awarded') ? 'Awarded' : 'Current';
 
                         popupContent = `
@@ -1554,7 +1649,7 @@ function createKYTCAPIControl(map) {
 
         div.innerHTML = `
             <button class="kytc-api-btn">
-                🛣️
+                <img src="images/kytc_logo.png" alt="KYTC API" width="20" height="20" style="opacity: 0.7;">
             </button>
         `;
 
@@ -1717,12 +1812,13 @@ function handleProjectLineSelection(e, layer, map) {
 
     const properties = layer.feature.properties;
 
-    // Use the correct GeoJSON property names
-    const rtNeUnique = properties.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANRT_NE_UNIQUE;
-    const bmp = properties.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANBMP;
-    const emp = properties.KYTCDynamic_HighwaysDBOTED_CHIPS_ACTIVEPLANEMP;
+    // Use the exact GeoJSON property names from the console output
+    const rtNeUnique = properties['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.RT_NE_UNIQUE'];
+    const bmp = properties['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.BMP'];
+    const emp = properties['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.EMP'];
 
     console.log('Extracted values:', { rtNeUnique, bmp, emp });
+    console.log('All available properties:', Object.keys(properties));
 
     // Update instruction box with the selected values
     updateKYTCInstructionsWithValues(rtNeUnique, bmp, emp);
@@ -2123,17 +2219,100 @@ function disableKYTCAPIMode(map) {
 
 // Restore original click handlers
 function restoreOriginalClickHandlers(map) {
-    // This would restore the original popup functionality
-    // For now, just remove the KYTC-specific handlers
+    // Restore the original popup functionality for project layers
     if (currentProjectsLayer) {
         currentProjectsLayer.eachLayer(function(layer) {
+            // Remove all click handlers first
             layer.off('click');
+
+            // Re-enable popup functionality by calling bindPopup again
+            if (layer.feature && layer.feature.properties) {
+                const props = layer.feature.properties;
+
+                // Use the same property names as loadGeoJSONLayer function
+                const projectId = props['KYTCDynamic_Highways.DBO.Project_Locations_Line.OBJECTID'] ||
+                                 props.OBJECTID ||
+                                 'Unknown';
+
+                const description = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.SYP_RPT_DESC'] ||
+                                  props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.SYP_RPT_TYPENAME'] ||
+                                  'No description available';
+
+                const location = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.LOCUNIQUE'] ||
+                                props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.ROUTENO'] ||
+                                '';
+
+                const county = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.COUNTYNAME'] ||
+                              props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.COUNTY'] ||
+                              '';
+
+                const planYear = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.PLANYEAR'] ||
+                                '';
+
+                const status = 'Current'; // This layer contains current projects
+
+                const popupContent = `
+                    <div style="font-family: Arial, sans-serif; min-width: 250px; max-width: 350px;">
+                        <h4 style="margin: 0 0 10px 0; color: #006600;">
+                            ${status} Highway Project
+                        </h4>
+                        <p><strong>Project ID:</strong> ${projectId}</p>
+                        ${county ? `<p><strong>County:</strong> ${county}</p>` : ''}
+                        ${location ? `<p><strong>Location:</strong> ${location}</p>` : ''}
+                        ${planYear ? `<p><strong>Plan Year:</strong> ${planYear}</p>` : ''}
+                        <p><strong>Description:</strong> ${description}</p>
+                    </div>
+                `;
+                layer.bindPopup(popupContent);
+            }
         });
     }
 
     if (awardedProjectsLayer) {
         awardedProjectsLayer.eachLayer(function(layer) {
+            // Remove all click handlers first
             layer.off('click');
+
+            // Re-enable popup functionality by calling bindPopup again
+            if (layer.feature && layer.feature.properties) {
+                const props = layer.feature.properties;
+
+                // Use the same property names as loadGeoJSONLayer function
+                const projectId = props['KYTCDynamic_Highways.DBO.Project_Locations_Line.OBJECTID'] ||
+                                 props.OBJECTID ||
+                                 'Unknown';
+
+                const description = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.SYP_RPT_DESC'] ||
+                                  props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.SYP_RPT_TYPENAME'] ||
+                                  'No description available';
+
+                const location = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.LOCUNIQUE'] ||
+                                props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.ROUTENO'] ||
+                                '';
+
+                const county = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.COUNTYNAME'] ||
+                              props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.COUNTY'] ||
+                              '';
+
+                const planYear = props['KYTCDynamic_Highways.DBO.TED_CHIPS_ACTIVEPLAN.PLANYEAR'] ||
+                                '';
+
+                const status = 'Awarded'; // This layer contains awarded projects
+
+                const popupContent = `
+                    <div style="font-family: Arial, sans-serif; min-width: 250px; max-width: 350px;">
+                        <h4 style="margin: 0 0 10px 0; color: #0066cc;">
+                            ${status} Highway Project
+                        </h4>
+                        <p><strong>Project ID:</strong> ${projectId}</p>
+                        ${county ? `<p><strong>County:</strong> ${county}</p>` : ''}
+                        ${location ? `<p><strong>Location:</strong> ${location}</p>` : ''}
+                        ${planYear ? `<p><strong>Plan Year:</strong> ${planYear}</p>` : ''}
+                        <p><strong>Description:</strong> ${description}</p>
+                    </div>
+                `;
+                layer.bindPopup(popupContent);
+            }
         });
     }
 }
@@ -2172,6 +2351,10 @@ function initializeMap() {
     // Add KYTC API control
     const kytcAPIControl = createKYTCAPIControl(map);
     kytcAPIControl.addTo(map);
+
+    // Add legend control
+    const legendControl = createLegendControl(map);
+    legendControl.addTo(map);
 
     // Load data layers - Load districts first to ensure they're available for zooming
     loadGeoJSONLayer(map, 'data/KYTC_Districts.geojson', {

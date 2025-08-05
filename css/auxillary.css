@@ -84,5 +84,83 @@ button:hover {
   text-align: left;
 }
 
+/* Flexbox layout for text and image sections */
+.flex-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.flex-text {
+  flex: 1;
+  min-width: 0; /* Allows text to wrap properly */
+}
+
+.flex-image {
+  flex: 0 0 auto;
+  max-width: 450px;
+}
+
+.flex-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(60, 94, 73, 0.15);
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .flex-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .flex-image {
+    max-width: 100%;
+  }
+}
+
+/* Collapsible section styling */
+details {
+  margin: 1.5rem 0;
+  border: 1px solid #709072;
+  border-radius: 0.5rem;
+  background: #f8f9f8;
+}
+
+details summary {
+  cursor: pointer;
+  padding: 1rem;
+  background: #e6ebe6;
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin: 0;
+  transition: background-color 0.2s ease;
+}
+
+details summary:hover {
+  background: #d9e0d9;
+}
+
+details summary h2 {
+  display: inline;
+  margin: 0;
+  color: #3c5e49;
+}
+
+details[open] summary {
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid #709072;
+}
+
+details[open] > :not(summary) {
+  padding: 1rem;
+  margin: 0;
+}
+
+details summary::marker {
+  color: #3c5e49;
+}
+
 
 

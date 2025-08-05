@@ -10,26 +10,63 @@
   <div class="container">
     <h1>Help: KY Highway Projects Dashboard</h1>
     <p>Welcome to the KY Highway Projects Dashboard! This help document will guide you through the main features and how to use the dashboard effectively.</p>
+    <img src="images/thumbnail.png" style="width:700px; display:block; margin: 0 auto 20px auto;">
 
-    <h2>Main Features</h2>
-    <ul>
-      <li><strong>Interactive Map:</strong> View and explore highway projects across Kentucky. Zoom, pan, and click on project markers for more details.</li>
-      <li><strong>Project Overview:</strong> See a summary of awarded and current projects, including counts and charts.</li>
-      <li><strong>Data Table:</strong> Browse, filter, and export project data in a tabular format.</li>
-      <li><strong>Charts:</strong> Visualize project types, funding, and other key metrics.</li>
-    </ul>
+    <details>
+      <summary><h2>Main Features</h2></summary>
+      <ul>
+        <li><strong>Interactive Map:</strong>
+            <p>View and explore highway projects across Kentucky.
+                  Zoom, pan, and click on project lines for more specific details.
+                  Zoom in and out by using the zoom button or mouse scroll wheel. If you double-click
+                  on the map, it will zoom in to the location incrementally. If you want to zoom out,
+                  you can use the zoom out button or hold down the "Shift" key and double-click on the map.
+            </p>
+        </li>
+        <li><strong>Filter Options:</strong>
+          <p>County/District filters (3rd & 4th buttons from the top)
+              Use the buttons on the right side of the map to select one of the filters to get a
+              dropdown list of counties or districts.  Select a county name or district number to
+              zoom the map to the boundary of that polygon.  The graphs and the data table will also
+              filter to display the filtered information.
+          </p>
+          <p>Project Type filter (5th button from the top)
+              The project type filters data from a curated list of project types.  Individual projects
+              can have multiple project types.  If you select a project type, the map will zoom to the
+              limits of all projects of that type.  The graphs and data table will filter to display
+              the filtered records.
+          </p>
+        </li>
+        <li><strong>Project Graphs:</strong>
+          <p>The top graph is pie chart that shows the distribution of projects across both awarded and
+            current projects. If you have made a county or district selection in the map, the pie chart
+            will update to show only the projects that match the selection.</p>
+          <p>The bottom graph is a bar chart that displays the number of projects by 6-yr plan year.
+            This chart will also update based on your map selections.</p>
+        </li>
+        <li><strong>Data Table:</strong>
+          <p>Browse, filter, sort, and export project data in a tabular format.
+            The table includes columns for District, County, Project ID, Route, Type of Work,
+            Beginning Milepoint, Ending Milepoint, Bridge ID (if part of project), Plan Year,
+            and Status (if known). Filter and sort the table by clicking on the column headers.
+            Export results as Excel, CSV, or Json files.</p>
+
+          </li>
+      </ul>
+    </details>
 
     <h2>How to Use</h2>
     <ol>
       <li><strong>Navigating the Map:</strong>
         <ul>
           <li>Use your mouse or touch gestures to move around the map.</li>
-          <li>Click on project markers to view brief plan project details.</li>
+          <li>Click on project lines to view brief plan project details.</li>
         </ul>
       </li>
       <li><strong>Filtering Data:</strong>
         <ul>
-          <li>Use the filter buttons on the right side of the map content area above to narrow down projects by county, district, or project type.</li>
+          <li>Use the filter buttons on the right side of the map content area above to narrow down projects by county, district,
+            or project type.</li>
         </ul>
       </li>
       <li><strong>Exporting Data:</strong>
@@ -45,20 +82,35 @@
       <li><strong>Getting More Information:</strong>
         <ul>
           <li>Hover over icons and buttons for tooltips.</li>
-          <li>Use the last of the map content buttons, zoom into an area of interest and click on a route to activate an API call to return complete route information. Make sure you use the "hand" mouse and not the "crosshairs".</li>
+          <li>Use the last of the map content buttons, zoom into an area of interest and click on a route to activate an API
+            call to return complete route information. Make sure you use the "pointer" mouse and not the "hand" mouse to call
+            the API.</li>
           <li>Use this Help document for reference.</li>
         </ul>
       </li>
     </ol>
 
-    <h2>FAQ</h2>
-  <p><strong>Q: How do I reset the dashboard?</strong><br>
-  A: Refresh the page or use the reset "CLR" button on the map.</p>
+    <details>
+      <summary><h2>FAQ</h2></summary>
+      <p><strong>Q: How do I reset the dashboard?</strong><br>
+      A: Refresh the page or use the reset "CLR" button on the map.</p>
 
-  <p><strong>Q: Who can I contact for support?</strong><br>
-  A: Please refer to the project README or contact the dashboard administrator.</p>
+      <p><strong>Q: How do I use the KYTC API for route information?</strong><br>
+      A: Click on KYTC API button (bottom button on right hand side of map).  A small dialog
+      will appear in the lower left corner over the legend button, instructing you to select the
+      route you are interested in learning more about.  Double-click the map to zoom in to the
+      desired location.  When you mouse-over the route, the mouse cursor will change from the
+      "hand" to a pointer. Click the route and you will see the unique identifier and milepoints
+      for the clicked route in the API dialog.  Click the button on the dialog to send the request
+      to the API.  The API will retrieve detailed route information from the API and return it to
+      a popup window overlying the graph area.  You can then view the route details and export them
+      using the buttons on the API window.</p>
 
-  <hr>
+      <p><strong>Q: Who can I contact for support?</strong><br>
+      A: Please refer to the project README or contact the dashboard administrator.</p>
+    </details>
+
+    <hr>
   <p>For further assistance, please reach out to the developer directly.</p>
 
   <p><a href="disclaimer.html">ProjectDisclaimer</a></p>

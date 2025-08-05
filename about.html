@@ -33,15 +33,20 @@
         of the Esri software stack. Built with modern JavaScript frameworks and leveraging open data APIs
         and spatial visualizations, the application empowers the public, contractors, and government
         stakeholders with intuitive access to authoritative project data.</p>
-      <p>At its core, this tool visualizes the Approved Six-Year Highway Plan (6YP)—a legislatively
-        approved framework updated every two years by the Kentucky General Assembly. The 6YP outlines major
-        highway improvement projects across the state and is developed through collaborative input from KYTC,
+      <p>At its core, this tool visualizes the Approved Six-Year Highway Plan (6YP) for the Commonwealth of Kentucky.
+        Required by Kentucky Revised Statutes (KRS) 176, the 6YP is a legislatively approved supplement to the Executive
+        Branch Biennial Budget that provides funding for major highway improvement projects scheduled for the upcoming
+        two years and approved by the Kentucky General Assembly. The 6YP is developed through collaborative input from
+        the Kentucky Transportation Cabinet (KYTC), local governments, and regional planning organizations, including
         Area Development Districts (ADDs), Metropolitan Planning Organizations (MPOs), and Highway District
-        Offices. The Viewer displays currently active and awarded projects derived from this plan, with data
-        reflecting the availability of both state and federal highway funds.</p>
-      <p>Designed for user experience, accessibility, performance and responsiveness, the dashboard supports
-        interactive filtering, dynamic charting, map-based exploration, and integration with state-maintained APIs,
-        making it a valuable tool for planning, transparency, and public engagement in infrastructure development.
+        Offices.</p>
+      <p>The dashboard provides a user-friendly interface for exploring the 6YP, including project locations,
+        descriptions, and funding sources. Users can filter projects by county, district, or project type derived from
+        this plan, with data reflecting the availability of both state and federal highway funds.</p>
+      <p>Designed for user experience, accessibility, performance and responsiveness, the dashboard supports map-based
+        exploration, interactive filtering, and dynamic charting. It integrates with the KYTC Spatial API and
+        public data files, allowing users to access route-specific information, making it a valuable tool for planning
+        and public engagement in infrastructure development.
       </p>
     </details>
 
@@ -50,12 +55,10 @@
       <p>The Kentucky Transportation Cabinet (KYTC) offers GIS-based access to construction project data using Esri
         proprietary tools. However, this approach limits public access due to licensing, performance issues, and
         limited interoperability. Users looking to explore highway projects often find the existing interfaces
-        unintuitive and inflexible.
-      </p>
+        unintuitive and inflexible.</p>
       <p>This project aims to create an open-source, device-responsive, non-ESRI dashboard that presents current
         transportation project data in a visually informative and user-friendly manner. It also aims to develop modular
-        functions for integration into similar dashboards.
-      </p>
+        functions for integration into similar dashboards.</p>
     </details>
 
     <details closed>
@@ -142,101 +145,116 @@
     <h3>Mockup</h3>
 
     <h3>Risks and Mitigation Startegies</h3>
-    <p>SQLite integration in-browser may be limited	Pre-generate SQLite from raw data using Python and ship with app
-API limits or downtime from KYTC Spatial API	Cache minimal data in localStorage or fallback to JSON
-Svelte integration may introduce build complexity	Encapsulate it as an optional feature, not core requirement
-Timeline slippage	Weekly progress reviews and modular component development
-Data alignment or structure changes	Write flexible, schema-aware fetch parser logic</p>
+    <p>SQLite integration in-browser may be limited Pre-generate SQLite from raw data using Python and ship with app
+      API limits or downtime from KYTC Spatial API Cache minimal data in localStorage or fallback to JSON
+      Svelte integration may introduce build complexity Encapsulate it as an optional feature, not core requirement
+      Timeline slippage Weekly progress reviews and modular component development
+      Data alignment or structure changes Write flexible, schema-aware fetch parser logic</p>
 
-      <h3>Testing andEvaluation Plan</h3>
-      <p>
-        <ul>
-          <li>Manual Testing for all UI components on Chrome, Safari, Firefox.</li>
-          <li>Device Responsiveness tested with dev tools and physical devices.</li>
-          <li>User Feedback from peers/mentors collected earlier.</li>
-          <li>PerformanceMetrics: mapload speed, filter responsiveness,datafetchtiming.</li>
-          <li>Code Quality: encapsulated modules, comments for AI-aided code.</li>
-          <li>Functional Checklists to track working filters, visualizations, API usage.</li
-        </ul>
+    <h3>Testing andEvaluation Plan</h3>
+    <p>
+    <ul>
+      <li>Manual Testing for all UI components will be performed using Chrome, Safari, and Firefox.</li>
+      <li>Device Responsiveness will be tested with dev tools and physical devices.</li>
+      <li>User Feedback from peers/mentors collected earlier.</li>
+      <li>PerformanceMetrics: mapload speed, filter responsiveness,datafetchtiming.</li>
+      <li>Code Quality: encapsulated modules, comments for AI-aided code.</li>
+      <li>Functional Checklists to track working filters, visualizations, API usage.</li </ul>
       </p>
-    </details>
-    <hr>
-    <details open>
-      <summary><h2 id="overview">Capstone Project Overview</h2></summary>
-    <p>This project is a culmination of the skills and knowledge acquired throughout the CodeYou program. It demonstrates
-      the ability to design and implement a complex, interactive web application that meets real-world needs. The project showcases
-      the use of modern web technologies, data visualization techniques, and API integration to create a functional and user-friendly
-      dashboard for exploring highway projects in Kentucky.</p>
-    <p>The dashboard is built with open web technologies (HTML, CSS, JavaScript, Leaflet.js, Chart.js, and Tabulator.js),
-      eliminating reliance on proprietary Esri tools. This removes licensing barriers and makes the tool freely
-      accessible to the public.</p>
-    <p>The interface is designed to be responsive, adapting to various devices and screen sizes. Interactive features like
-    filtering, charting, and map-based exploration make the dashboard intuitive and easy to use, overcoming the
-    inflexibility of previous solutions.</p>
-    <p>By using lightweight libraries and direct GeoJSON data, the dashboard improves performance and ensures compatibility
-    with other open data sources and APIs. SQLite is used for efficient data storage and querying, supporting offline
-    access.</p>
-    <p>Integration with the KYTC Spatial API and public data files allows users to explore route-specific project metadata
-    without restrictions, supporting transparency and public engagement.</p>
-    </details>
+      </details>
+      <hr>
+      <details open>
+        <summary>
+          <h2 id="overview">Capstone Project Overview</h2>
+        </summary>
+        <p>This project is a culmination of the skills and knowledge acquired throughout the CodeYou program. It
+          demonstrates
+          the ability to design and implement a complex, interactive web application that meets real-world needs. The
+          project showcases
+          the use of modern web technologies, data visualization techniques, and API integration to create a functional and
+          user-friendly
+          dashboard for exploring highway projects in Kentucky.</p>
+        <p>The dashboard utilizes open web technologies such as HTML, CSS, JavaScript, Leaflet.js, Chart.js, and
+          Tabulator.js. This approach eliminates dependence on proprietary Esri tools, thereby removing licensing barriers
+          and ensuring the tool is freely accessible to the public.</p>
+        <p>The interface is designed to be responsive, effortlessly adapting to various devices and screen sizes. With
+          features such as filtering, charting, and map-based exploration, the dashboard is both user-friendly and
+          intuitive, effectively addressing the shortcomings of previous solutions.</p>
 
-    <details open>
-    <summary><h2 id="functionality">Code Functionality and Use:</h2></summary>
-      <p>JavaScript is the backbone of the dashboard's interactivity, visulization, and modularity, making the application
-        functional, user-friendly, and responsive.</p>
-      <p>It is essential for enabling all of the dynamic features of the dashboard:
+        <p>By using lightweight libraries and directly interacting with GeoJSON data, the dashboard boosts performance and
+          makes it easier to link up with other open data sources and APIs. We’ve integrated SQLite for efficient data
+          storage and querying, which also enables offline access.</p>
+        <p>Connecting with the KYTC Spatial API and public data files gives users the ability to access route-specific
+          project metadata freely, promoting transparency and encouraging public participation.</p>
+      </details>
+
+      <details open>
+        <summary>
+          <h2 id="functionality">Code Functionality and Use:</h2>
+        </summary>
+        <p>JavaScript is the backbone of the dashboard's interactivity, visulization, and modularity, making the application
+          functional, user-friendly, and responsive.</p>
+        <p>It is essential for enabling all of the dynamic features of the dashboard:
         <ul>
           <li>Data Loading & API Integration:</li>
-            <p>JavaScript fetches project data from GeoJSON files, SQLite databases, and the KYTC Spatial API.
-              This allows the dashboard to display up-to-date information and route-specific metadata.</p>
+          <p>JavaScript fetches project data from GeoJSON files, SQLite databases, and the KYTC Spatial API.
+            This allows the dashboard to display up-to-date information and route-specific metadata.</p>
           <li>Map Visualization:</li>
-            <p>Using Leaflet.js, JavaScript renders interactive maps, displays project locations, and
-              enables user interactions such as clicking on features to view details.</p>
+          <p>Using Leaflet.js, JavaScript renders interactive maps, displays project locations, and
+            enables user interactions such as clicking on features to view details.</p>
           <li>Charting & Data Visualization:</li>
-            <p>JChart.js is used via JavaScript to generate dynamic pie and bar charts, helping users
+          <p>JChart.js is used via JavaScript to generate dynamic pie and bar charts, helping users
             visualize project distributions and summaries.</p>
           <li>Filtering & Sorting:</li>
-            <p>JavaScript powers the filtering logic, allowing users to select counties, districts, or project types. It updates the
+          <p>JavaScript powers the filtering logic, allowing users to select counties, districts, or project types. It
+            updates the
             map, charts, and data table in real time based on user selections.</p>
           <li>Interactive Data Table:</li>
-            <p>Tabulator.js is used to create sortable, filterable, and exportable tables. JavaScript manages the table’s data, updates
+          <p>Tabulator.js is used to create sortable, filterable, and exportable tables. JavaScript manages the table’s
+            data, updates
             it when filters change, and enables export to CSV/Excel.</p>
           <li>Responsive UI & Modular Components:</li>
-            <p>JavaScript ensures the dashboard adapts to different devices and screen sizes, and supports modular architecture so
+          <p>JavaScript ensures the dashboard adapts to different devices and screen sizes, and supports modular
+            architecture so
             components (map, charts, table) can be reused or extended.</p>
         </ul>
-      </p>
+        </p>
 
-      <h3>Modularization</h3>
+        <h3>Modularization</h3>
 
-      <p>A challenging aspect of this project has been modularizing the dashboard's codebase. Ensuring
-        that each component is self-contained and reusable requires careful planning and implementation.
-      </p>
-      <p>Modularizing the dashboard requires decoupling logic, managing shared state, abstracting third-party
-        integrations, refactoring styles, and designing clear interfaces for each component. This can
-        be time-consuming but will greatly improve reusability and maintainability.</p>
-      <p>Some logic is intertwined between the map charts and table, making it challenging to separate
-        them into distinct components. However, the overall architecture is designed to allow for
-        future enhancements and modularization.
-      </p>
-    </details>
+        <p>A challenging aspect of this project has been modularizing the dashboard's codebase. Ensuring
+          that each component is self-contained and reusable requires careful planning and implementation.
+        </p>
+        <p>Modularizing the JavaScript used in the dashboard into modules involves separating out the logic, handling shared
+          state, abstracting integrations with third-party services, reworking styles, and creating clear interfaces for
+          each component. While this process can take a significant amount of time, it will significantly enhance both the
+          reusability and maintainability of the project.</p>
+        <p>There are certain parts of the logic that connects the map charts and table, which makes it tough to break them
+          down into separate parts. Nonetheless, the overall structure is built with future improvements and modularity in
+          mind.
+        </p>
+      </details>
 
-    <details open>
-    <summary><h2 id="future">Future Plans and Reflection:</h2></summary>
-    <h3>CodeYou Experience</h3>
-    <p>The Web Development Cohort has been my second experience with Code:You. Last year I participated
-      in the Data Analytics Cohort, which provided a strong foundation in data analysis and visualization.
-      This year, I have stretched my existing JavaScript skills from years ago to study new methodologies and
-      tools to focus on creating interactive and user-friendly web applications.</p>
-    </p>
-    <p>A key skill I have developed is the ability to quickly prototype and iterate on ideas using JavaScript frameworks like React and Svelte.
-      This will greatly enhance my efficiency and effectiveness in future projects.</p>
-    </details
-
-    <details open>
-    <summary><h2 id="disclaimer">Disclaimer</h2></summary>
-    <p><a href="disclaimer.html">Link to disclaimer</a></p>
-    </details>
+      <details open>
+        <summary>
+          <h2 id="future">Future Plans and Reflection:</h2>
+        </summary>
+        <h3>CodeYou Experience</h3>
+        <p>The Web Development Cohort has been my second experience with Code:You. Last year, I took part in the Data
+          Analytics Cohort, which gave me a solid grounding in data analysis and visualization. This year, I've been
+          building on my old JavaScript skills to explore new methodologies and tools, all with the goal of developing
+          interactive and user-friendly web applications.</p>
+        </p>
+        <p>I can't say I have mastered this skill, but I am honing my ability to prototype and iterate on ideas with
+          JavaScript frameworks like React and Svelte. While I am still learning these frameworks, this skill will
+          significantly boost my efficiency and effectiveness in upcoming projects.</p>
+      </details <details open>
+      <summary>
+        <h2 id="disclaimer">Disclaimer</h2>
+      </summary>
+      <p><a href="disclaimer.html">Link to disclaimer</a></p>
+      </details>
   </div>
 </body>
+
 </html>
